@@ -44,14 +44,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+        new CloudAsyncTask().execute(this);
+//        JavaJokes javaJokes = new JavaJokes();
+//        Intent intent = new Intent(this, JokesActivity.class);
+//        intent.putExtra("joke", javaJokes.tellAJoke());
+//        startActivity(intent);
 
-        JavaJokes javaJokes = new JavaJokes();
-        Intent intent = new Intent(this, JokesActivity.class);
-        intent.putExtra("joke", javaJokes.tellAJoke());
-        startActivity(intent);
-
-       // Toast.makeText(this, javaJokes.tellAJoke(), Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, javaJokes.tellAJoke(), Toast.LENGTH_SHORT).show();
     }
+
+
 
 
 }
