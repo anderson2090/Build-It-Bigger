@@ -8,6 +8,8 @@ public class JavaJokes {
 
     public String tellAJoke() {
         List<String> jokeList = new ArrayList<>();
+        // These are just some random jokes copied from internet, They are not meant
+        //to hurt someone's feelings towards any programming language or framework
         jokeList.add("The MS programmers are intrigued and when they get on the train, they watch the Java programmers to see what they do when the guard comes to check the tickets. It turns out that, before the guard comes, they all cram into the toilet. The guard knocks on the door, and asks for the ticket. The guard takes it from under the door, and slides it back.\n" +
                 "\n" +
                 "The MS programmers are all impressed, so on the way back, they buy only one ticket. Only to watch the Java folks get on the train without buying a ticket at all.\n" +

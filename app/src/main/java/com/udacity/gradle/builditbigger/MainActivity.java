@@ -7,15 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.androidjokes.JokesActivity;
-import com.example.javajokes.JavaJokes;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
+    // Please do not run this app on Genymotion emulator's free version
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -57,12 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         }.execute();
-//        JavaJokes javaJokes = new JavaJokes();
-//        Intent intent = new Intent(this, JokesActivity.class);
-//        intent.putExtra("joke", javaJokes.tellAJoke());
-//        startActivity(intent);
 
-        // Toast.makeText(this, javaJokes.tellAJoke(), Toast.LENGTH_SHORT).show();
     }
 
 
