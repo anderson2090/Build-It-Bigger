@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import com.example.javajokes.JavaJokes;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void tellJoke(View view) {
-        new CloudAsyncTask().execute(this);
+        new CloudAsyncTask() {
+            @Override
+            protected void onPostExecute(String s) {
+                Intent intent = new Intent(getApplicationContext(), JokesActivity.class);
+                intent.putExtra("joke", s);
+
+                startActivity(intent);
+            }
+        }.execute();
 //        JavaJokes javaJokes = new JavaJokes();
 //        Intent intent = new Intent(this, JokesActivity.class);
 //        intent.putExtra("joke", javaJokes.tellAJoke());
@@ -52,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Toast.makeText(this, javaJokes.tellAJoke(), Toast.LENGTH_SHORT).show();
     }
-
-
 
 
 }
